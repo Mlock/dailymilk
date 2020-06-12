@@ -1,20 +1,20 @@
 import React from 'react';
-import './.css';
+import './Prompt.css';
 
 import Button from '../Button/Button.js';
 
-function Card(props) {
+function Prompt(props) {
   return (
-    <div className="Card">
-      <h1 className="Card-title">{props.title}</h1>
-      {
+    <div className="Prompt">
+      <h1 className="Prompt-date">{props.date}</h1>
+      {/* {
           props.image ? (
             <img src={props.image} alt="card" />
           ) : (
             null
           )
-      }
-      <div className="Card-info">
+      } */}
+      <div className="Prompt-daily">
         {props.children}
         {
             props.buttonText ? (
@@ -30,4 +30,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default Prompt;
