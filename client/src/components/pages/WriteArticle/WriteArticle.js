@@ -37,7 +37,11 @@ function WriteArticle(props) {
 
   return (
     <div className="WriteArticle">
-      <h1>Write an article</h1>
+      <h3>June 16, 2020</h3>
+      <p>What is the meaning of life?</p>
+
+      <h1>Add your story</h1>
+
       <input
           name="title"
           placeholder="Title"
@@ -48,14 +52,14 @@ function WriteArticle(props) {
 
       <textarea
           name="content"
-          placeholder="Contents"
+          placeholder="Start your story with something"
           value={content}
           onChange={onChangeContent}
         />
 
       <br />
 
-      <button onClick={submit}>Add to blog</button>
+      <button onClick={submit}>Add Story</button>
     </div>
   );
 }
