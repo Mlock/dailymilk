@@ -64,7 +64,7 @@ function Blog() {
 
   return (
     <div className="Blog">
-      <h1>Blog</h1>
+      <h1>Daily Post</h1>
       {
         blogPosts.map((post, index) => (
           <div className="Blog-article" key={post._id}>

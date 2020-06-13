@@ -18,8 +18,8 @@ function LandingPage() {
         <p>
           there's should be something here
         </p>
-        <Link to="/blog/">Blog</Link>
-        <Link to="/write/">Write article</Link>
+        <Link to="/blog/">Today's Writings</Link>
+        <Link to="/write/">Write Article</Link>
       </header>
     </div>
   );

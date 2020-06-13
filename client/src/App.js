@@ -12,10 +12,10 @@ function App () {
     <div className="App">
       <nav className="App-navigation">
         <h1 className="App-title">Prompt</h1>
-      
+      <br />
        <p>Daily stories for everyone, by anyone</p>
         <Link to="/">Daily Prompt</Link>
-        <Link to="/blog/">Blog</Link>
+        <Link to="/blog/">Today's Writings</Link>
         <Link to="/write/">Previous Days</Link>
       </nav>
 
