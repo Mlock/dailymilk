@@ -11,7 +11,9 @@ function App () {
   return (
     <div className="App">
       <nav className="App-navigation">
-        <h1 className="App-title">MERN Starter</h1>
+        <h1 className="App-title">Prompt</h1>
+      
+       <p>Daily stories for everyone, by anyone</p>
         <Link to="/">Welcome</Link>
         <Link to="/blog/">Blog</Link>
         <Link to="/write/">Write Article</Link>

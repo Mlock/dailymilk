@@ -1,5 +1,5 @@
 .App {
-    background: linear-gradient(to top, #ff00cc, #333399);
+    background: #fff;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr minmax(auto, 800px) 1fr;
@@ -11,7 +11,7 @@
 
 .App-navigation {
     padding: 10px;
-    color: white;
+    color: #000;
 }
 
 .App-sidebar {
@@ -43,7 +43,7 @@
 .App-navigation a {
     font-size: 14pt;
     text-decoration: none;
-    color: white;
+    color: #000;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
 }
