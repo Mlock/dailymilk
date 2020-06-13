@@ -14,16 +14,16 @@ function App () {
         <h1 className="App-title">Prompt</h1>
       
        <p>Daily stories for everyone, by anyone</p>
-        <Link to="/">Welcome</Link>
+        <Link to="/">Daily Prompt</Link>
         <Link to="/blog/">Blog</Link>
-        <Link to="/write/">Write Article</Link>
+        <Link to="/write/">Previous Days</Link>
       </nav>
 
       <div className="App-mainContent">
         <Switch>
-          <Route exact path='/' component={LandingPage} />
+          <Route exact path='/' component={WriteArticle} />
           <Route exact path='/blog/' component={Blog} />
-          <Route exact path='/write/' component={WriteArticle} />
+          <Route exact path='/write/' component={LandingPage} />
         </Switch>
       </div>
 
