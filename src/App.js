@@ -13,7 +13,7 @@ function App() {
         <p>Daily stories for everyone, by anyone</p>
       </header>
 
-      <div className="App-Prompt">
+      <div className="App-prompt">
           <Prompt 
           date="june 12, 2020">
             <p>What is the meaning of life?</p>
