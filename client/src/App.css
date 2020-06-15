@@ -17,7 +17,8 @@
 .App-sidebar {
     background: rgba(255, 255, 255, 0.9);
     display: relative;
-    padding: 10px;
+    padding: 16px;
+    width: 240px;
 }
 
 .App-sidebar img {
@@ -39,6 +40,13 @@
     align-items: center;
     cursor: pointer;
 }
+.App-links {
+    grid-column: 4;
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    cursor: pointer;
+}
 
 .App-navigation a {
     font-size: 14pt;
@@ -49,7 +57,7 @@
 }
 
 .App-mainContent {
-    grid-column: 2;
+    grid-column: 2 / span 1;
 }
 
 

@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './DailyPost.css';
 
 function DailyPost() {
-  const [blogPosts, setBlogPosts] = useState([]);
-  const [dailyPost, setDailyPost] = useState([]);
-  const [dateSelect, setDateSelect] = useState([]);
+  const [dailyPosts, setDailyPosts] = useState([]);
+
 
   function fetchPosts() {
     console.log('Fetching data from API');
-    fetch('/api/mongodb/blogposts/')
+    fetch('/api/mongodb/dailyposts/')
       .then(response => response.json())
       .then(data => {
         console.log('Got data back', data);
-        setBlogPosts(data);
+        setDailyPosts(data);
       });
   }
 
   function previousPost() {
     console.log('Fetching data from API');
-    fetch('/api/mongodb/blogposts/')
+    fetch('/api/mongodb/dailyposts/')
       .then(response => response.json())
       .then(data => {
         console.log('Got Data back'. data);
@@ -29,7 +28,7 @@ function DailyPost() {
   function deleteArticle(documentId) {
     console.log('Sending DELETE for', documentId);
     // Do the DELETE, using "?_id=" to specify which document we are deleting
-    fetch('/api/mongodb/blogposts/?_id=' + documentId, {
+    fetch('/api/mongodb/dateposts/?_id=' + documentId, {
         method: 'DELETE',
       })
       .then(response => response.json())
@@ -57,7 +56,7 @@ function DailyPost() {
 
     // Do the PUT, using "?_id=" to specify which document we are affecting
     const documentId = article._id;
-    fetch('/api/mongodb/blogposts/?_id=' + documentId, {
+    fetch('/api/mongodb/dailyposts/?_id=' + documentId, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formData),
@@ -75,18 +74,18 @@ function DailyPost() {
   useEffect(fetchPosts, []);
 
   return (
-    <div className="Blog">
+    <div className="DailyPost">
       <h1>Daily Post</h1>
       {
-        blogPosts.map((post, index) => (
-          <div className="Blog-article" key={post._id}>
+        dailyPosts.map((post, index) => (
+          <div className="DailyPost-article" key={post._id}>
           
 
             <h1>{post.title}</h1>
             <h3>Written by {post.user}</h3>
             <p>{post.text}</p>
 
-            <div className="Blog-articleActions">
+            <div className="DailyPost-articleActions">
               <div onClick={() => deleteArticle(post._id)}>
                 <span alt="delete this">🗑</span>
               </div>

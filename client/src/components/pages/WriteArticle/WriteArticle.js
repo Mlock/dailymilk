@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import './WriteArticle.css';
 
+// function getDailyPrompt() {
+//   console.log('getting daily prompt or qustions')
+//   console.log('daily prompt is: ', prompt)
+//   fetch('/api/mongodb/dailyposts/?prompt=' + prompt)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log('this is data', data[0]);
+//     if (data[0]);
+//   } else {
+//     setData(getDefault());
+//   }
+//   )};
+// }
+
+
 function WriteArticle(props) {
   const[userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
@@ -71,6 +86,9 @@ function WriteArticle(props) {
 
       <button onClick={submit}>Add Story</button>
     </div>
+    
+
+
   );
 }
 
