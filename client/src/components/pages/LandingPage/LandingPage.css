@@ -16,3 +16,11 @@
 .LandingPage a {
   color: #61dafb;
 }
+
+.DailyQuestion {
+  background: white;
+  padding: 16px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px #cfcfcf;
+}

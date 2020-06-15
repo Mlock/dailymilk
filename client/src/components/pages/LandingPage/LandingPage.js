@@ -60,9 +60,11 @@ function submit() {
 
 return (
   <div className="WriteArticle">
+    <h1>Daily Question</h1>
+    <div className="DailyQuestion">
     <h3>June 16, 2020</h3>
     <p>What is the meaning of life?</p>
-
+    </div>
     <h1>Add your story</h1>
     <input
         name="user name"

@@ -64,6 +64,29 @@ function Blog() {
 
   return (
     <div className="Blog">
+        <div className="Dates">
+      <h3>Select a date</h3>
+      {
+        blogPosts.map((post, index) => (
+          <div className="Blog-article" key={post._id}>
+
+            <h1>{post.title}</h1>
+            <h3>By {post.user}</h3>
+            <p>{post.text}</p>
+
+            <div className="Blog-articleActions">
+              <div onClick={() => deleteArticle(post._id)}>
+                {/* <span alt="delete this">🗑</span> */}
+              </div>
+              <div onClick={() => voteArticle(post)}>
+                <span alt="upvote this">⬆ {post.voteCount}</span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+
+      </div>
       <h1>Daily Post</h1>
       {
         blogPosts.map((post, index) => (
@@ -75,7 +98,7 @@ function Blog() {
 
             <div className="Blog-articleActions">
               <div onClick={() => deleteArticle(post._id)}>
-                <span alt="delete this">🗑</span>
+                {/* <span alt="delete this">🗑</span> */}
               </div>
               <div onClick={() => voteArticle(post)}>
                 <span alt="upvote this">⬆ {post.voteCount}</span>
@@ -84,7 +107,11 @@ function Blog() {
           </div>
         ))
       }
+       <div className="Dates">
+      dafdadf
+      </div>
     </div>
+   
   );
 }
 

@@ -32,4 +32,8 @@
   left: 16px;
 }
 
+.Date {
+  grid-column: 2 / span 1;
+}
+
 
