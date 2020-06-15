@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './WriteArticle.css';
 
 function WriteArticle(props) {
+  const[userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -12,9 +13,13 @@ function WriteArticle(props) {
   function onChangeTitle(ev) {
     setTitle(ev.target.value);
   }
+  function onChangeUser(ev) {
+    setUserName(ev.target.value);
+  }
 
   function submit() {
     const formData = {
+      user: userName,
       title: title,
       text: content,
     };
@@ -41,7 +46,12 @@ function WriteArticle(props) {
       <p>What is the meaning of life?</p>
 
       <h1>Add your story</h1>
-
+      <input
+          name="user name"
+          placeholder="What's your name?"
+          value={userName}
+          onChange={onChangeUser}
+        />
       <input
           name="title"
           placeholder="Title"

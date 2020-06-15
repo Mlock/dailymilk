@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Blog.css';
+import './DailyPost.css';
 
-function Blog() {
+function DailyPost() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [dailyPost, setDailyPost] = useState([]);
+  const [dateSelect, setDateSelect] = useState([]);
 
   function fetchPosts() {
     console.log('Fetching data from API');
@@ -12,6 +14,16 @@ function Blog() {
         console.log('Got data back', data);
         setBlogPosts(data);
       });
+  }
+
+  function previousPost() {
+    console.log('Fetching data from API');
+    fetch('/api/mongodb/blogposts/')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Got Data back'. data);
+
+      })
   }
 
   function deleteArticle(documentId) {
@@ -68,9 +80,10 @@ function Blog() {
       {
         blogPosts.map((post, index) => (
           <div className="Blog-article" key={post._id}>
+          
 
             <h1>{post.title}</h1>
-            <h3>By {post.user}</h3>
+            <h3>Written by {post.user}</h3>
             <p>{post.text}</p>
 
             <div className="Blog-articleActions">
@@ -88,4 +101,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default DailyPost;
