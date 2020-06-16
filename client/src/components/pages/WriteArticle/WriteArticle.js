@@ -40,19 +40,24 @@ function WriteArticle(props) {
     };
     // Can also be written:
     // const formData = {title, text: content};
+    if (formData.length === 0) {
+      
+      
+    } else {
 
     fetch('/api/mongodb/blogposts/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(formData),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Got this back', data);
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Got this back', data);
 
-        // Redirect to blog
-        props.history.push('/blog/');
+      // Redirect to blog
+      props.history.push('/blog/');
       });
+    }
   }
 
   return (
