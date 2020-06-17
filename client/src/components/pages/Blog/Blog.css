@@ -1,4 +1,9 @@
 .Blog {
+  display: flex;
+}
+
+.Posts {
+  flex: 4;
 }
 
 .Blog-article {
@@ -32,8 +37,9 @@
   left: 16px;
 }
 
-.Date {
-  grid-column: 2 / span 1;
+.Dates {
+  /* grid-column: 2 / span 1;   */
+  flex: 2;
 }
 
 

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Blog.css';
+import DailyPost from '../DailyPost/DailyPost';
 
 function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [dailyQuestions, setDailyQuestions] = useState([]);
+  const [selectedQuestionId, setSelectedQuestionId] = useState([]);
 
   function fetchQuestions() {
     console.log('Fetching date from API');
@@ -13,6 +15,14 @@ function Blog() {
         console.log('Got a question back', data);
         setDailyQuestions(data);
       })
+  }
+
+  function fetchSelectedQuestionId() {
+
+  }
+  function yesterdayQuestion() {
+    const yestdayQuestion = dailyQuestions[dailyQuestions.length - 1]
+    console.log('gettting yesterday question', yesterdayQuestion )
   }
 
   function fetchPosts() {
@@ -76,6 +86,30 @@ function Blog() {
 
   return (
     <div className="Blog">
+         <div className="Posts">
+      <h1>Daily Post</h1>
+      {
+        blogPosts.map((post, index) => (
+          <div className="Blog-article" key={post._id}>
+
+            <h1>{post.title}</h1>
+            <h3>By {post.user}</h3>
+            <p>{post.text}</p>
+
+            <div className="Blog-articleActions">
+              <div onClick={() => deleteArticle(post._id)}>
+                <span alt="delete this">🗑</span>
+              </div>
+              <div onClick={() => voteArticle(post)}>
+                <span alt="upvote this">⬆ {post.voteCount}</span>
+              </div>
+            </div>
+          </div>
+          
+        ))
+      }
+      </div>
+      <br />
         <div className="Dates">
       <h1>Select a date</h1>
       {
@@ -98,29 +132,8 @@ function Blog() {
       }
 
       </div>
-      <br />
-      <h1>Daily Post</h1>
-      {
-        blogPosts.map((post, index) => (
-          <div className="Blog-article" key={post._id}>
 
-            <h1>{post.title}</h1>
-            <h3>By {post.user}</h3>
-            <p>{post.text}</p>
-
-            <div className="Blog-articleActions">
-              <div onClick={() => deleteArticle(post._id)}>
-                <span alt="delete this">🗑</span>
-              </div>
-              <div onClick={() => voteArticle(post)}>
-                <span alt="upvote this">⬆ {post.voteCount}</span>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-       <div className="Dates">
-      </div>
+    
     </div>
    
   );
