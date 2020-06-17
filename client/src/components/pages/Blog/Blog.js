@@ -3,6 +3,17 @@ import './Blog.css';
 
 function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [dailyQuestions, setDailyQuestions] = useState([]);
+
+  function fetchQuestions() {
+    console.log('Fetching date from API');
+    fetch('/api/mongodb/dailyquestions/')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Got a question back', data);
+        setDailyQuestions(data);
+      })
+  }
 
   function fetchPosts() {
     console.log('Fetching data from API');
@@ -61,17 +72,18 @@ function Blog() {
 
   // Invoke fetchPosts on initial load
   useEffect(fetchPosts, []);
+  useEffect(fetchQuestions, []);
 
   return (
     <div className="Blog">
         <div className="Dates">
-      <h3>Select a date</h3>
+      <h1>Select a date</h1>
       {
-        blogPosts.map((post, index) => (
+        dailyQuestions.map((post, index) => (
           <div className="Blog-article" key={post._id}>
 
-            <h1>June 21, 2020</h1>
-            <p>What is the most important thing?</p>
+            <h1>{post.date}</h1>
+            <p>{post.question}</p>
 
             <div className="Blog-articleActions">
               <div onClick={() => deleteArticle(post._id)}>

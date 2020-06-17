@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './WriteArticle.css';
+import SlateWriter from '../../Slate/SlateWriter.js';
 
 // function getDailyPrompt() {
 //   console.log('getting daily prompt or qustions')
@@ -64,7 +65,7 @@ function WriteArticle(props) {
     <div className="WriteArticle">
       <h3>June 16, 2020</h3>
       <p>What is the meaning of life?</p>
-
+<SlateWriter />
       <h1>Add your story</h1>
       <input
           name="user name"

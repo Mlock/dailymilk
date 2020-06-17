@@ -17,8 +17,8 @@ function App () {
        <p>Stories for everyone, by anyone</p>
        <div className="App-links">
         <Link to="/">Daily Prompt</Link>
-        <Link to="/blog/">Today's Writings</Link>
-        <Link to="/daily/">Previous Days</Link>
+        <Link to="/blog">Yesterday's Post</Link>
+        <Link to="/blog/">Previous Days</Link>
         </div>
       </nav>
 
