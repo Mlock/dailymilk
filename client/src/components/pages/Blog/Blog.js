@@ -87,7 +87,12 @@ function Blog() {
   return (
     <div className="Blog">
          <div className="Posts">
-      <h1>Daily Post</h1>
+      <h1>Question</h1>
+      <div className="Blog-article">
+        <h3>May 20, 2020</h3>
+        <p>this the question that we're going through</p>
+      </div>
+      <h1>23 Stories</h1>
       {
         blogPosts.map((post, index) => (
           <div className="Blog-article" key={post._id}>
