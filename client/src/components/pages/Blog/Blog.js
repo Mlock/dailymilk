@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Blog.css';
 import DailyPost from '../DailyPost/DailyPost';
+import Moment from 'moment';
 
 function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [dailyQuestions, setDailyQuestions] = useState([]);
-  const [selectedQuestionId, setSelectedQuestionId] = useState([]);
+  const [selectedQuestionId, setSelectedQuestionId] = useState(null);
 
   function fetchQuestions() {
     console.log('Fetching date from API');
@@ -17,8 +18,14 @@ function Blog() {
       })
   }
 
-  function fetchSelectedQuestionId() {
-
+  function fetchSelectedQuestionId(documentId) {
+    setSelectedQuestionId(documentId)
+    fetch('/api/mongodb/blogposts/?_id=' + documentId)
+      .then(response => response.json())
+      .then(data => {
+        console.log('Got data back', data);
+        setBlogPosts(data);
+      });
   }
   function yesterdayQuestion() {
     const yestdayQuestion = dailyQuestions[dailyQuestions.length - 1]
@@ -83,6 +90,15 @@ function Blog() {
   // Invoke fetchPosts on initial load
   useEffect(fetchPosts, []);
   useEffect(fetchQuestions, []);
+  useEffect(() => {
+    if (dailyQuestions.length > 0) {
+      const idOfFirstQuestion = dailyQuestions[0]._id
+      setSelectedQuestionId(idOfFirstQuestion)
+    }
+  }, [dailyQuestions]);
+
+
+  const selectedQuestion = dailyQuestions.find(question => question._id === selectedQuestionId)
 
   return (
     <div className="Blog">
@@ -90,7 +106,8 @@ function Blog() {
       <h1>Question</h1>
       <div className="Blog-article">
         <h3>May 20, 2020</h3>
-        <p>this the question that we're going through</p>
+        <h3>{selectedQuestion ? selectedQuestion.date : null}</h3>
+        <p>{selectedQuestion ? selectedQuestion.question : null}</p>
       </div>
       <h1>23 Stories</h1>
       {
@@ -117,9 +134,12 @@ function Blog() {
       <br />
         <div className="Dates">
       <h1>Select a date</h1>
+      {/* If card is selected background color == grey
+      else 
+      nothing */}
       {
         dailyQuestions.map((post, index) => (
-          <div className="Blog-article" key={post._id}>
+          <div className="Blog-article" key={post._id} onClick={() => fetchSelectedQuestionId(post._id)}>
 
             <h1>{post.date}</h1>
             <p>{post.question}</p>
