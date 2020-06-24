@@ -5,24 +5,12 @@ import './LandingPage.css';
 
 
 function LandingPage(props) {
-//   return (
-//     <div className="LandingPage">
-//       <header className="LandingPage-header">
-//         <p>
-//           Here's the question of the day
-//         </p>
-//         <div className="datePicker">
-//         <Link to="/blog/">Today's Writings</Link>
-//         <br />
-//         <Link to="/">Write Article</Link>
-//         </div>
-//       </header>
-//     </div>
-//   );
-// }
-const[userName, setUserName] = useState('');
+const [userName, setUserName] = useState('');
 const [title, setTitle] = useState('');
 const [content, setContent] = useState('');
+const [todaysQuestions, setTodaysQuestions] = useState([]);
+
+
 
 function onChangeContent(ev) {
   setContent(ev.target.value);
@@ -56,14 +44,53 @@ function submit() {
       // Redirect to blog
       props.history.push('/blog/');
     });
+
+  function fetchTodaysQuestions() {
+    console.log('Fetching date from API');
+    fetch('/api/mongodb/dailyquestions/')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Got a question back', data);
+        setTodaysQuestions(data);
+      })
+  }
+
+
+
+
+// app.put('/api/custom/add-response/', (request, response) => {
+//   const blogposts = request.params.blogposts;
+//   const data = request.body;
+//   const query = request.query;
+
+//   if (query._id) {
+//     query._id = ObjectId(query._id);
+//   }
+
+//   db.collection('dailyquestions')
+//   .updateOne(query, {$push: data}, (err, results) => {
+//     if (err) throw err;
+
+//     if (results.result.nModified === 1) {
+//       response.json({
+//         success: true,
+//       });
+//     } else {
+//       response.json({
+//         success: false,
+//       });
+//     }
+//     });
+// });
+
 }
 
 return (
   <div className="WriteArticle">
     <h1>Daily Question</h1>
     <div className="DailyQuestion">
-    <h3>June 16, 2020</h3>
-    <p>What is the meaning of life?</p>
+    <h3>{todaysQuestions.date}</h3>
+      <p>{todaysQuestions.question}</p>
     </div>
     <h1>Add your story</h1>
     <input

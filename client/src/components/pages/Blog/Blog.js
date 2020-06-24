@@ -105,7 +105,6 @@ function Blog() {
          <div className="Posts">
       <h1>Question</h1>
       <div className="Blog-article">
-        <h3>May 20, 2020</h3>
         <h3>{selectedQuestion ? selectedQuestion.date : null}</h3>
         <p>{selectedQuestion ? selectedQuestion.question : null}</p>
       </div>
