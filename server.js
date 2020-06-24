@@ -14,6 +14,31 @@ app.use(express.json());
 // unsecured front-end applications. Should not be used in production.
 
 
+app.put('/api/dailyquestions/add-response/', (request, response) => {
+  const blogposts = request.params.blogposts;
+  const data = request.body;
+  const query = request.query;
+
+  if (query._id) {
+    query._id = ObjectId(query._id);
+  }
+
+  db.collection('dailyquestions')
+  .updateOne(query, {$push: {responses: data.text}}, (err, results) => {
+    if (err) throw err;
+
+    if (results.result.nModified === 1) {
+      response.json({
+        success: true,
+      });
+    } else {
+      response.json({
+        success: false,
+      });
+    }
+    });
+});
+
 // GET for getting existing item
 app.get('/api/mongodb/:collectionName/', (request, response) => {
   const collectionName = request.params.collectionName;

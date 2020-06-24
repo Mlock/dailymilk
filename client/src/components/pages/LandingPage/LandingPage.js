@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
@@ -8,9 +8,7 @@ function LandingPage(props) {
 const [userName, setUserName] = useState('');
 const [title, setTitle] = useState('');
 const [content, setContent] = useState('');
-const [todaysQuestions, setTodaysQuestions] = useState([]);
-
-
+const [prompts, setPrompts] = useState([]);
 
 function onChangeContent(ev) {
   setContent(ev.target.value);
@@ -23,17 +21,31 @@ function onChangeUser(ev) {
   setUserName(ev.target.value);
 }
 
+function todaysPrompt(){
+  return prompts.find(prompt => prompt.date === todaysDateString())
+}
+
+function todaysDateString() {
+  const today = new Date()
+  const todayString = today.toISOString()
+  
+  return todayString.slice(0,10)
+}
+// const date = new Date();  // 2009-11-10
+// const month = date.toLocaleString('default', { month: 'long' });
+// console.log(month);
+
 function submit() {
   const formData = {
-    user: userName,
-    title: title,
+    // user: userName,
     text: content,
   };
+
   // Can also be written:
   // const formData = {title, text: content};
 
-  fetch('/api/mongodb/blogposts/', {
-      method: 'POST',
+  fetch('/api/dailyquestions/add-response/?_id=' + todaysPrompt()._id, {
+      method: 'PUT',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData),
     })
@@ -44,53 +56,32 @@ function submit() {
       // Redirect to blog
       props.history.push('/blog/');
     });
+    }
 
-  function fetchTodaysQuestions() {
+  function fetchPrompts() {
     console.log('Fetching date from API');
     fetch('/api/mongodb/dailyquestions/')
       .then(response => response.json())
       .then(data => {
         console.log('Got a question back', data);
-        setTodaysQuestions(data);
-      })
-  }
+        window.myData = data;
+        setPrompts(data);
+      });
+    }
+      
+  useEffect(fetchPrompts, []);
 
 
 
-
-// app.put('/api/custom/add-response/', (request, response) => {
-//   const blogposts = request.params.blogposts;
-//   const data = request.body;
-//   const query = request.query;
-
-//   if (query._id) {
-//     query._id = ObjectId(query._id);
-//   }
-
-//   db.collection('dailyquestions')
-//   .updateOne(query, {$push: data}, (err, results) => {
-//     if (err) throw err;
-
-//     if (results.result.nModified === 1) {
-//       response.json({
-//         success: true,
-//       });
-//     } else {
-//       response.json({
-//         success: false,
-//       });
-//     }
-//     });
-// });
-
-}
+const prompt = todaysPrompt()
 
 return (
   <div className="WriteArticle">
     <h1>Daily Question</h1>
     <div className="DailyQuestion">
-    <h3>{todaysQuestions.date}</h3>
-      <p>{todaysQuestions.question}</p>
+      
+    <h3>{prompt && prompt.date}</h3>
+      <p>{prompt && prompt.question}</p>
     </div>
     <h1>Add your story</h1>
     <input
@@ -98,12 +89,6 @@ return (
         placeholder="What's your name?"
         value={userName}
         onChange={onChangeUser}
-      />
-    <input
-        name="title"
-        placeholder="Title"
-        value={title}
-        onChange={onChangeTitle}
       />
     <br />
 
