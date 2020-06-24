@@ -11,7 +11,7 @@
 
 .App-navigation {
     padding: 10px;
-    color: #000;
+    color: rgb(51, 51, 51);
 }
 
 .App-sidebar {
@@ -27,6 +27,12 @@
 
 .App-navigation h1 {
     font-size: 36pt;
+    margin-bottom: -35px;
+    color: rgb(51, 51, 51);
+}
+
+h1 {
+    color: rgb(51, 51, 51);
 }
 
 .Article-title {
@@ -46,12 +52,13 @@
     align-items: right;
     justify-content: space-between;
     cursor: pointer;
+    color: rgb(51, 51, 51);
 }
 
 .App-navigation a {
     font-size: 14pt;
     text-decoration: none;
-    color: #000;
+    color: rgb(51, 51, 51);
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
 }
