@@ -12,13 +12,14 @@ function App () {
   return (
     <div className="App">
       <nav className="App-navigation">
-        <h1 className="App-title">daily milk</h1>
+        <div>
+        <h1 className="App-title">Daily Milk</h1>
       <br />
-       <p>Stories for everyone, by anyone</p>
+       <p><em>Stories for everyone, by anyone</em></p>
+       </div>
        <div className="App-links">
-        <Link to="/">Daily Prompt</Link>
-        <Link to="/blog">Yesterday's Post</Link>
-        <Link to="/blog/">Previous Days</Link>
+        <Link to="/">Daily Prompt&nbsp;&nbsp;&nbsp;</Link>
+        <Link to="/blog/">Previous Prompts</Link>
         </div>
       </nav>
 
