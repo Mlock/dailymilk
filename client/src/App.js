@@ -20,7 +20,7 @@ function App () {
        <div className="App-links">
         <Link to="/">Daily Prompt</Link>
         <Link to="/blog/">Previous Prompts</Link>
-        <Link to="/createquestion/">Submit a prompt</Link>
+        <Link to="/createprompt/">Submit a prompt</Link>
         </div>
       </nav>
 
