@@ -1,43 +1,24 @@
 import React, { useState } from 'react';
 import './WriteArticle.css';
-import SlateWriter from '../../Slate/SlateWriter.js';
 
-// function getDailyPrompt() {
-//   console.log('getting daily prompt or qustions')
-//   console.log('daily prompt is: ', prompt)
-//   fetch('/api/mongodb/dailyposts/?prompt=' + prompt)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log('this is data', data[0]);
-//     if (data[0]);
-//   } else {
-//     setData(getDefault());
-//   }
-//   )};
-// }
 
 
 function WriteArticle(props) {
-  const[userName, setUserName] = useState('');
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const[questionDate, setQuestionDate] = useState('');
+  const [question, setQuestion] = useState('');
 
-  function onChangeContent(ev) {
-    setContent(ev.target.value);
-  }
 
-  function onChangeTitle(ev) {
-    setTitle(ev.target.value);
+  function onChangeQuestion(ev) {
+    setQuestion(ev.target.value);
   }
-  function onChangeUser(ev) {
-    setUserName(ev.target.value);
+  function onChangeQuestionDate(ev) {
+    setQuestionDate(ev.target.value);
   }
 
   function submit() {
     const formData = {
-      user: userName,
-      title: title,
-      text: content,
+      date: questionDate,
+      question: question,
     };
     // Can also be written:
     // const formData = {title, text: content};
@@ -46,7 +27,7 @@ function WriteArticle(props) {
       
     } else {
 
-    fetch('/api/mongodb/blogposts/', {
+    fetch('/api/mongodb/dailyquestions/', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData),
@@ -63,34 +44,26 @@ function WriteArticle(props) {
 
   return (
     <div className="WriteArticle">
-      <h3>June 16, 2020</h3>
-      <p>What is the meaning of life?</p>
-<SlateWriter />
-      <h1>Add your story</h1>
+      <h1>Add a question</h1>
       <input
-          name="user name"
-          placeholder="What's your name?"
-          value={userName}
-          onChange={onChangeUser}
-        />
-      <input
-          name="title"
-          placeholder="Title"
-          value={title}
-          onChange={onChangeTitle}
-        />
-      <br />
-
-      <textarea
-          name="content"
-          placeholder="Start your story with something"
-          value={content}
-          onChange={onChangeContent}
+          name="Question date"
+          placeholder="What yyyy-mm-dd is this question?"
+          value={questionDate}
+          onChange={onChangeQuestionDate}
         />
 
       <br />
 
-      <button onClick={submit}>Add Story</button>
+      <textarea
+          name="question"
+          placeholder="What is the question of the day?"
+          value={question}
+          onChange={onChangeQuestion}
+        />
+
+      <br />
+
+      <button onClick={submit}>Add Question</button>
     </div>
     
 
