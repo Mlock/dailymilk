@@ -17,11 +17,6 @@ function Blog() {
       })
   }
 
-  function yesterdayQuestion() {
-    const yestdayQuestion = dailyQuestions[dailyQuestions.length - 1]
-    console.log('gettting yesterday question', yesterdayQuestion )
-  }
-
   // function voteArticle(article) {
   //   let newVoteCount = article.voteCount;
 
@@ -67,6 +62,7 @@ function Blog() {
     <div className="Blog">
          <div className="Posts">
       <h1>{selectedQuestion && selectedQuestion.question}</h1>
+      {/* <h1>{selectedQuestion && selectedQuestion.userName}</h1> */}
       {/* <div className="Blog-article">
         <h3>{selectedQuestion && selectedQuestion.question}</h3>
         <h4>{selectedQuestion && selectedQuestion.date}</h4>
@@ -76,7 +72,7 @@ function Blog() {
         selectedQuestion && selectedQuestion.responses.map((response, index) => (
           <div className="Blog-article" >
 
-            <p>POSSIBLE TO DO - GET AUTHOR NAME</p>
+            {/* <p>POSSIBLE TO DO - GET AUTHOR NAME</p> */}
             <p>{response}</p>
 
             {/* <div className="Blog-articleActions">

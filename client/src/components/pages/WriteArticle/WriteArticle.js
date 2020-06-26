@@ -44,10 +44,10 @@ function WriteArticle(props) {
 
   return (
     <div className="WriteArticle">
-      <h1>Add a question</h1>
+      <h1>Add a prompt</h1>
       <input
-          name="Question date"
-          placeholder="What yyyy-mm-dd is this question?"
+          name="Prompt date"
+          placeholder="When yyyy-mm-dd is this prompt active?"
           value={questionDate}
           onChange={onChangeQuestionDate}
         />
@@ -55,15 +55,15 @@ function WriteArticle(props) {
       <br />
 
       <textarea
-          name="question"
-          placeholder="What is the question of the day?"
+          name="Prompt"
+          placeholder="What is the prompt of the day?"
           value={question}
           onChange={onChangeQuestion}
         />
 
       <br />
 
-      <button onClick={submit}>Add Question</button>
+      <button onClick={submit}>Add Prompt</button>
     </div>
     
 

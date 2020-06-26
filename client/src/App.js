@@ -27,7 +27,7 @@ function App () {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/blog/' component={Blog} />
-          <Route exact path='/createquestion/' component={WriteArticle} /> 
+          <Route exact path='/createprompt/' component={WriteArticle} /> 
         </Switch>
       </div>
     </div>
