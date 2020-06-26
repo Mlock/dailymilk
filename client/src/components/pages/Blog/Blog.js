@@ -22,36 +22,6 @@ function Blog() {
     console.log('gettting yesterday question', yesterdayQuestion )
   }
 
-  // function voteArticle(article) {
-  //   let newVoteCount = article.voteCount;
-
-  //   // Increase the vote count 
-  //   if (!newVoteCount) {
-  //     newVoteCount = 1;
-  //   } else {
-  //     newVoteCount++;
-  //   }
-
-  //   const formData = {
-  //     voteCount: newVoteCount,
-  //   };
-
-  //   // Do the PUT, using "?_id=" to specify which document we are affecting
-  //   const documentId = article._id;
-  //   fetch('/api/mongodb/blogposts/?_id=' + documentId, {
-  //       method: 'PUT',
-  //       headers: {'Content-Type': 'application/json'},
-  //       body: JSON.stringify(formData),
-  //     })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log('Got this back', data);
-
-  //       // Call method to refresh data
-  //       fetchPosts();
-  //     });
-  // }
-
   useEffect(fetchQuestions, []);
   useEffect(() => {
     if (dailyQuestions.length > 0) {
@@ -62,16 +32,17 @@ function Blog() {
 
 
   const selectedQuestion = dailyQuestions.find(question => question._id === selectedQuestionId)
+  // const today = new Date().toISOString().slice(0,10)
+  const date = new Date();  // 2009-11-10
+  const today = date.toLocaleString('default', {year: 'numeric', month: '2-digit',day: '2-digit'});
+
+  console.log('Today is: ' + today)
 
   return (
     <div className="Blog">
          <div className="Posts">
-      <h1>{selectedQuestion && selectedQuestion.question}</h1>
-      {/* <div className="Blog-article">
-        <h3>{selectedQuestion && selectedQuestion.question}</h3>
-        <h4>{selectedQuestion && selectedQuestion.date}</h4>
-        <p>{selectedQuestion && selectedQuestion.question}</p>
-      </div> */}
+      <h2>{selectedQuestion && selectedQuestion.question}</h2>
+      
       {
         selectedQuestion && selectedQuestion.responses.map((response, index) => (
           <div className="Blog-article" >
@@ -79,11 +50,6 @@ function Blog() {
             <p>POSSIBLE TO DO - GET AUTHOR NAME</p>
             <p>{response}</p>
 
-            {/* <div className="Blog-articleActions">
-              <div onClick={() => voteArticle(response)}>
-                <span alt="upvote this">⬆ {response.voteCount}</span>
-              </div>
-            </div> */}
           </div>
           
         ))
@@ -91,19 +57,15 @@ function Blog() {
       </div>
       <br />
         <div className="Dates">
-      <h2>Previous Prompts</h2>
-      {/* If card is selected background color == grey
-      else 
-      nothing */}
-      {
-        dailyQuestions.map((post, index) => (
+      <h3>Previous Prompts</h3>
+      
+      {dailyQuestions.map((post, index) => post.date < today && (
           <div className="Blog-article" key={post._id} onClick={() => setSelectedQuestionId(post._id)}>
-
             <h3>{post.question}</h3>
             <p>Posted on: {post.date}</p>
 
           </div>
-        ))
+        )).reverse()
       }
 
       </div>
@@ -113,5 +75,8 @@ function Blog() {
    
   );
 }
+
+
+
 
 export default Blog;

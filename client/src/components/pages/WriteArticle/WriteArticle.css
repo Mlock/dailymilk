@@ -1,7 +1,7 @@
 .WriteArticle input,
 .WriteArticle textarea,
 .WriteArticle button {
-  font-size: 24pt;
+  font-size: 16pt;
   background: none;
   color: black;
   padding: 10px;
@@ -9,6 +9,11 @@
   display: block;
   border: 2px solid white;
 }
+
+.WriteArticle textarea {
+  height: 300px;
+}
+
 
 .WriteArticle button {
   color: black;

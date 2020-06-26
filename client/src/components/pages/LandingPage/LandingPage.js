@@ -27,13 +27,15 @@ function todaysPrompt(){
 
 function todaysDateString() {
   const today = new Date()
-  const todayString = today.toISOString()
+  const todayString = today.toLocaleString('default', {year: 'numeric', month: '2-digit',day: '2-digit'});
   
   return todayString.slice(0,10)
 }
-// const date = new Date();  // 2009-11-10
-// const month = date.toLocaleString('default', { month: 'long' });
-// console.log(month);
+
+const date = new Date();  // 2009-11-10
+const cleanDate = date.toLocaleString('default', {year: 'numeric', month: '2-digit',day: '2-digit'});
+console.log(cleanDate);
+
 
 function submit() {
   const formData = {
@@ -77,11 +79,11 @@ const prompt = todaysPrompt()
 
 return (
   <div className="WriteArticle">
-    <h1>Daily Question</h1>
+    <h1>Daily Prompt <span className='spanDate'>- {cleanDate}</span></h1>
+    
     <div className="DailyQuestion">
       
-    <h3>{prompt && prompt.date}</h3>
-      <p>{prompt && prompt.question}</p>
+    <h3>{prompt && prompt.question}</h3>
     </div>
     <h1>Add your story</h1>
     <input
@@ -94,7 +96,7 @@ return (
 
     <textarea
         name="content"
-        placeholder="Start your story with something"
+        placeholder="Write your story"
         value={content}
         onChange={onChangeContent}
       />

@@ -44,8 +44,8 @@ function WriteArticle(props) {
 
   return (
     <div className="WriteArticle">
-      <h1>Add a question</h1>
-      <input
+      <h1>Submit a prompt</h1>
+      {/* <input
           name="Question date"
           placeholder="What yyyy-mm-dd is this question?"
           value={questionDate}
@@ -53,10 +53,10 @@ function WriteArticle(props) {
         />
 
       <br />
-
+ */}
       <textarea
           name="question"
-          placeholder="What is the question of the day?"
+          placeholder="Got a great idea for a prompt? Write here and maybe one day you'll see it on the site! "
           value={question}
           onChange={onChangeQuestion}
         />
