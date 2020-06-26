@@ -63,7 +63,7 @@ function WriteArticle(props) {
 
       <br />
 
-      <button onClick={submit}>Add Question</button>
+      <button onClick={submit}>Add Prompt</button>
     </div>
     
 

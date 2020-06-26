@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 
 
 function LandingPage(props) {
 const [userName, setUserName] = useState('');
-const [title, setTitle] = useState('');
 const [content, setContent] = useState('');
 const [prompts, setPrompts] = useState([]);
 
@@ -14,9 +12,6 @@ function onChangeContent(ev) {
   setContent(ev.target.value);
 }
 
-function onChangeTitle(ev) {
-  setTitle(ev.target.value);
-}
 function onChangeUser(ev) {
   setUserName(ev.target.value);
 }

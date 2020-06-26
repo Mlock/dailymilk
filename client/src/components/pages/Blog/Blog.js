@@ -47,7 +47,7 @@ function Blog() {
         selectedQuestion && selectedQuestion.responses.map((response, index) => (
           <div className="Blog-article" >
 
-            <p>POSSIBLE TO DO - GET AUTHOR NAME</p>
+            {/* <p>POSSIBLE TO DO - GET AUTHOR NAME</p> */}
             <p>{response}</p>
 
           </div>
