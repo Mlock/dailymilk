@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import Button from '../../Button/Button.js'
 import { Link } from 'react-router-dom';
+import daily from '../../../img/daily.jpg';
+import community from '../../../img/community.jpg';
+import inspire from '../../../img/inspire.jpg';
 
 function LandingPage(props) {
   const [userName, setUserName] = useState("");
@@ -84,7 +87,9 @@ function LandingPage(props) {
       <h1>Inspiration found</h1>
 
       <p>A good story is like fire, it takes a spark to get started. </p>
-
+      <img className="HomePage-image" src={daily} />
+      <img className="HomePage-image" src={community} />
+      <img className="HomePage-image" src={inspire} />
       <p>At Daily Milk, you'll find a new writing prompt every day to kickstart
         your writing process. Once you've shared your story, you can browse the
         stories of other writers in the Daily Milk community.

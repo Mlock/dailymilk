@@ -24,6 +24,10 @@
 
 }
 
+.HomePage-image{
+  width: 250px;
+}
+
 .DailyQuestion {
   background: white;
   padding: 16px;
