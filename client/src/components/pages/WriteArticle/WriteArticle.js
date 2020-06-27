@@ -57,7 +57,7 @@ function WriteArticle(props) {
  */}
       <textarea
           name="question"
-          placeholder=" "
+          placeholder="It was a dark and stormy night..."
           value={question}
           onChange={onChangeQuestion}
         />

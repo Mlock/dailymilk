@@ -84,3 +84,8 @@ h1 {
 .App-subtitle{
     font-family: 'Noto Serif', serif;
 }
+
+Input {
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+}

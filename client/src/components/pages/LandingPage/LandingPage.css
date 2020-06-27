@@ -13,7 +13,7 @@
 }
 
 .LandingPage a {
-  color: #61dafb;
+  color: #6aa4c8;
 }
 
 .DailyQuestion {
@@ -22,28 +22,34 @@
   position: relative;
   border-radius: 8px;
   box-shadow: 2px 4px 8px #cfcfcf;
-}
-
-.spanDate {
   font-size: 18px;
+  
+}
+.WriteArticle textarea{
+  width: 800px;
 }
 
-.PromptHeader{
+.LandingPage-DailyPrompt {
+  font-size: 16px;
+  font-style: italic;
+  padding:  15px 30px 15px 30px;
+  line-height: 1.6;
+  background-color: #ece9e9;
+}
+
+.LandingPage-PromptHeader{
   text-align: center;
   font-size: 18px;
   padding-bottom: 20px;
 }
 
-.StoryHeader{
+.LandingPage-StoryHeader{
   font-size: 18px;
   margin-top: 50px;
   font-weight: 700;
 }
-.LandingPageInput {
+.LandingPage-input {
   border: 1px solid grey;
   width: 350px;
 }
 
-Input {
-  font-family: 'Courier New', Courier, monospace;
-}
