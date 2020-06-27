@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Blog.css';
 import DailyPost from '../DailyPost/DailyPost';
 import Moment from 'moment';
+import Truncate from 'react-truncate';
 
 function Blog() {
   const [dailyQuestions, setDailyQuestions] = useState([]);
@@ -41,8 +42,8 @@ function Blog() {
   return (
     <div className="Blog">
          <div className="Posts">
-      <h2>{selectedQuestion && selectedQuestion.question}</h2>
-      
+      <h3>{selectedQuestion && selectedQuestion.question}</h3>
+      <h4>{selectedQuestion && selectedQuestion.date}</h4>
       {
         selectedQuestion && selectedQuestion.responses.map((response, index) => (
           <div className="Blog-article" >
@@ -59,9 +60,9 @@ function Blog() {
         <div className="Dates">
       <h3>Previous Prompts</h3>
       
-      {dailyQuestions.map((post, index) => post.date < today && (
+      {dailyQuestions.map((post, index) => post.date && post.date < today &&  (
           <div className="Blog-article" key={post._id} onClick={() => setSelectedQuestionId(post._id)}>
-            <h3>{post.question}</h3>
+            <h4><Truncate lines={5}>{post.question}</Truncate></h4>
             <p>Posted on: {post.date}</p>
 
           </div>
