@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./LandingPage.css";
+import Button from "../../Button/Button";
 
 function LandingPage(props) {
   const [userName, setUserName] = useState("");
@@ -56,7 +57,7 @@ function LandingPage(props) {
         console.log("Got this back", data);
 
         // Redirect to blog
-        props.history.push("/blog/");
+        props.history.push("/archive/");
       });
   }
 
@@ -91,8 +92,7 @@ function LandingPage(props) {
         onChange={onChangeContent}
       />
     <br />
-
-    <button onClick={submit}>Submit your story</button>
+    <Button onClick={submit} type="primary">Submit your story</Button>
   </div>
   
 

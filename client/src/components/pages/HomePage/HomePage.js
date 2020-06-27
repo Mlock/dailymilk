@@ -94,7 +94,8 @@ function LandingPage(props) {
         your writing process. Once you've shared your story, you can browse the
         stories of other writers in the Daily Milk community.
       </p>
-      <a href="/dailyprompt">Get started</a>
+      <Link to="/dailyprompt">
+      <Button type="primary">Start Writing</Button></Link>
     </div>
   );
 }

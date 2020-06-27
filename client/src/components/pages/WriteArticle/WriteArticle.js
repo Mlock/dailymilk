@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './WriteArticle.css';
+import Button from "../../Button/Button";
 
 
 
@@ -37,7 +38,7 @@ function WriteArticle(props) {
       console.log('Got this back', data);
 
       // Redirect to blog
-      props.history.push('/blog/');
+      props.history.push('/archive/');
       });
     }
   }
@@ -54,8 +55,7 @@ function WriteArticle(props) {
         />
 
       <br />
-
-      <button onClick={submit}>Add your prompt</button>
+      <Button onClick={submit} type="primary">Add your prompt</Button>
     </div>
     
 
