@@ -4,8 +4,20 @@
 
 .Posts {
   flex: 4;
+  margin-top: 50px;
 }
 
+.DailyPrompt {
+  font-size: 16px;
+  font-style: italic;
+  padding:  10px 10px 10px 10px;
+  line-height: 1.6;
+}
+
+.Posts h3{
+  font-size: 12px;
+  padding: 15px;
+}
 .Blog-article {
   background: white;
   padding: 16px;
@@ -41,5 +53,3 @@
   /* grid-column: 2 / span 1;   */
   flex: 2;
 }
-
-
