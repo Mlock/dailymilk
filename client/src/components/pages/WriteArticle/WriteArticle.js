@@ -45,20 +45,7 @@ function WriteArticle(props) {
   return (
     <div className="WriteArticle">
       <h1>Submit a prompt</h1>
-<<<<<<< HEAD
       <p>To write a compelling prompt, describe an open-ended scenario that's not too specific. Prompts may take a few days to be approved before they appear on the site.</p>
-=======
-      <p>To write a compelling prompt, describe an open-ended scenario that's not too specific. Prompts take a few days to be approved before they appear on the site.</p>
->>>>>>> bd708d3b09a7c53b1f6c790d5ad9e8aecf364c4a
-      {/* <input
-          name="Question date"
-          placeholder="What yyyy-mm-dd is this question?"
-          value={questionDate}
-          onChange={onChangeQuestionDate}
-        />
-
-      <br />
- */}
       <textarea
           name="question"
           placeholder="It was a dark and stormy night..."

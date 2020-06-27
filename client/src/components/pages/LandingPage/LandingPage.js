@@ -90,7 +90,6 @@ function LandingPage(props) {
         value={content}
         onChange={onChangeContent}
       />
-<<<<<<< HEAD
     <br />
 
     <button onClick={submit}>Submit your story</button>
@@ -99,24 +98,6 @@ function LandingPage(props) {
 
 
 );
-=======
-      <br />
-      <p>Add your name</p>
-      <div className="LandingPage-input">
-        <input
-          name="user name"
-          placeholder=""
-          value={userName}
-          onChange={onChangeUser}
-        />
-      </div>
-
-      <br />
-
-      <button onClick={submit}>Submit your story</button>
-    </div>
-  );
->>>>>>> bd708d3b09a7c53b1f6c790d5ad9e8aecf364c4a
 }
 
 export default LandingPage;
