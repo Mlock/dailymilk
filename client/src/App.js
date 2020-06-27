@@ -20,7 +20,7 @@ function App () {
        </div>
        <div className="App-links">
         <Link to="/dailyprompt/">Today</Link>
-        <Link to="/blog/">Previous prompts</Link>
+        <Link to="/archive/">Previous prompts</Link>
         <Link to="/createprompt/">Submit your own</Link>
         </div>
       </nav>
@@ -29,7 +29,7 @@ function App () {
         <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/dailyprompt/' component={LandingPage} />
-          <Route exact path='/blog/' component={Blog} />
+          <Route exact path='/archive/' component={Blog} />
           <Route exact path='/createprompt/' component={WriteArticle} /> 
         </Switch>
       </div>
