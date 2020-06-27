@@ -91,16 +91,6 @@ return (
         onChange={onChangeContent}
       />
     <br />
-    <p>Enter your name</p>
-  <div className="LandingPageInput"><input
-        name="user name"
-        placeholder=""
-        value={userName}
-        onChange={onChangeUser}
-        
-      /></div>
-
-    <br />
 
     <button onClick={submit}>Submit your story</button>
   </div>
