@@ -26,8 +26,17 @@ function Blog() {
   useEffect(fetchQuestions, []);
   useEffect(() => {
     if (dailyQuestions.length > 0) {
+<<<<<<< HEAD
       const idOfFirstQuestion = dailyQuestions[0]._id;
       setSelectedQuestionId(idOfFirstQuestion);
+=======
+      const date = new Date();
+      date.setDate(date.getDate() - 1);
+      const yesterdayClean = date.toLocaleString('default', {year: 'numeric', month: '2-digit',day: '2-digit'});
+      console.log('yesterday date: ' + yesterdayClean)
+      const idOfFirstQuestion = dailyQuestions.find(question => question.date == yesterdayClean)._id    
+      setSelectedQuestionId(idOfFirstQuestion)
+>>>>>>> 481b825033a3e31bb62cbf2836c1bcb249857151
     }
   }, [dailyQuestions]);
 
@@ -43,6 +52,7 @@ function Blog() {
   });
 
   console.log("Today is: " + today);
+
 
   return (
     <div className="Blog">

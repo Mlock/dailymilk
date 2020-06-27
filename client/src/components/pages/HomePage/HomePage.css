@@ -16,6 +16,13 @@
 .LandingPage a {
   color: #61dafb;
 }
+.Hero {
+  font-size: 120px;
+}
+.Button {
+  margin-top: 16px;
+
+}
 
 .DailyQuestion {
   background: white;

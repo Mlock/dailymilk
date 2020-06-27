@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "./HomePage.css";
+
+import React, { useState, useEffect } from 'react';
+import './HomePage.css';
+import Button from '../../Button/Button.js'
+import { Link } from 'react-router-dom';
 
 function LandingPage(props) {
   const [userName, setUserName] = useState("");
@@ -72,6 +75,7 @@ function LandingPage(props) {
   }
 
   useEffect(fetchPrompts, []);
+
 
   const prompt = todaysPrompt();
 
