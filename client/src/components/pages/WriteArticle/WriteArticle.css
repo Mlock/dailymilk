@@ -4,12 +4,12 @@
 .WriteArticle textarea,
 .WriteArticle button {
   font-size: 14pt;
-  background: none;
+  background: none; 
   color: black;
   padding: 10px;
   width: 100%;
   display: block;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .WriteArticle textarea {
