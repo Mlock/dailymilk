@@ -75,11 +75,11 @@ const prompt = todaysPrompt()
 
 return (
   <div className="WriteArticle">
-    <h1 className="Hero">Love to write?</h1>
+    <h1 className="Hero">Love to <br />write?</h1>
     <p>Do you love to write?  Do you want to become a better writer?  Do you often not know what to write about?  Well, you've come to the right place!</p>
 
     <p>Here, at Daily Milk we provide you with a new writing prompt every day that will get your creative juices flowing.  Simply write your own story, based of the daily prompt and satiate your writing craving.  Come back every day for a new prompt and to read all the responses from yesterday's prompt.</p>
-    <Link to="/dailyprompt/">
+    <Link to="/dailyprompt">
   <Button type="primary">Start Writing</Button></Link>
   </div>
   

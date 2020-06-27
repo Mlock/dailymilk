@@ -19,6 +19,10 @@
 .Hero {
   font-size: 120px;
 }
+.Button {
+  margin-top: 16px;
+
+}
 
 .DailyQuestion {
   background: white;
