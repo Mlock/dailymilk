@@ -47,8 +47,9 @@ function Blog() {
   return (
     <div className="Blog">
       <div className="Posts">
+      <div className="PromptsTitle">{selectedQuestion && selectedQuestion.date}</div>
         <div className="DailyPrompt">{selectedQuestion && selectedQuestion.question}</div>
-        <h4>{selectedQuestion && selectedQuestion.date}</h4>
+        
         {selectedQuestion &&
           selectedQuestion.responses.map((response, index) => (
             <div className="Blog-article">
@@ -59,7 +60,7 @@ function Blog() {
       </div>
       <br />
       <div className="Dates">
-        <h3>Previous Prompts</h3>
+        <div className="PromptsTitle">Previous Prompts</div>
 
         {dailyQuestions
           .map(
