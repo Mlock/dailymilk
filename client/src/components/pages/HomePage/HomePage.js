@@ -74,32 +74,10 @@ const prompt = todaysPrompt()
 
 return (
   <div className="WriteArticle">
-    <h1>Daily Prompt <span className='spanDate'>- {cleanDate}</span></h1>
-    
-    <div className="DailyQuestion">
-      
-    <h3>{prompt && prompt.question}</h3>
-    </div>
-    <h1>Add your story</h1>
-    <p> testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing  testing </p>
-    <input
-        name="user name"
-        placeholder="What's your name?"
-        value={userName}
-        onChange={onChangeUser}
-      />
-    <br />
+    <h1>Love to write?</h1>
+    <p>Do you love to write?  Do you want to become a better writer?  Do you often not know what to write about?  Well, you've come to the right place!</p>
 
-    <textarea
-        name="content"
-        placeholder="Write your story"
-        value={content}
-        onChange={onChangeContent}
-      />
-
-    <br />
-
-    <button onClick={submit}>Add Story</button>
+    <p>Here, at Daily Milk we provide you with a new writing prompt every day that will get your creative juices flowing.  Simply write your own story, based of the daily prompt and satiate your writing craving.  Come back every day for a new prompt and to read all the responses from yesterday's prompt.</p>
   </div>
   
 
