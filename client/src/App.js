@@ -16,12 +16,12 @@ function App () {
         <div>
         <Link to="/"><h1 className="App-title">Daily Milk</h1></Link>
       <br />
-       <p><em>Stories for everyone, by anyone</em></p>
+       <p className="App-subtitle">Stories for everyone, by anyone.</p>
        </div>
        <div className="App-links">
-        <Link to="/dailyprompt/">Daily Prompt</Link>
-        <Link to="/blog/">Previous Prompts</Link>
-        <Link to="/createprompt/">Submit a prompt</Link>
+        <Link to="/dailyprompt/">Today</Link>
+        <Link to="/blog/">Previous prompts</Link>
+        <Link to="/createprompt/">Submit your own</Link>
         </div>
       </nav>
 

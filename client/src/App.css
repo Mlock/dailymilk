@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .App {
     background: #fff;
@@ -9,10 +9,11 @@
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     align-items: stretch;
+    font-family: 'Noto Serif', serif;
 }
 
 .App-navigation {
-    padding: 10px;
+    padding: 14px;
     color: rgb(51, 51, 51);
 }
 
@@ -47,6 +48,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 .App-links {
     grid-column: 4;
@@ -58,14 +60,12 @@ h1 {
 }
 
 
-
 .App-navigation a {
-    font-size: 14pt;
+    font-size: 12pt;
     text-decoration: none;
     color: rgb(51, 51, 51);
-    font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
-    padding-right: 15px;
+    padding-right: 16px;
 }
 
 .App-mainContent {
@@ -81,4 +81,6 @@ h1 {
     font-family: 'Amatic SC', cursive;
 }
 
-
+.App-subtitle{
+    font-family: 'Noto Serif', serif;
+}

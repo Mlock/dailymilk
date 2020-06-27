@@ -74,31 +74,35 @@ const prompt = todaysPrompt()
 
 return (
   <div className="WriteArticle">
-    <h1>Daily Prompt <span className='spanDate'>- {cleanDate}</span></h1>
-    
+    {/* <h1>Today's prompt <span className='spanDate'>- {cleanDate}</span></h1> */}
+    <span className="PromptHeader"><h3>Today's prompt {cleanDate}</h3></span>
     <div className="DailyQuestion">
       
     <h3>{prompt && prompt.question}</h3>
     </div>
-    <h1>Add your story</h1>
-    <input
-        name="user name"
-        placeholder="What's your name?"
-        value={userName}
-        onChange={onChangeUser}
-      />
-    <br />
+    <p className="StoryHeader">Add your story</p>
+    
+  
 
     <textarea
         name="content"
-        placeholder="Write your story"
+        placeholder="Don't think, just write"
         value={content}
         onChange={onChangeContent}
       />
+    <br />
+    <p>Enter your name</p>
+  <div className="LandingPageInput"><input
+        name="user name"
+        placeholder=""
+        value={userName}
+        onChange={onChangeUser}
+        
+      /></div>
 
     <br />
 
-    <button onClick={submit}>Add Story</button>
+    <button onClick={submit}>Submit your story</button>
   </div>
   
 

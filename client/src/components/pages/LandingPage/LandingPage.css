@@ -1,6 +1,5 @@
-.LandingPage {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 .LandingPage-header {
   background-color: #282c34;
@@ -27,4 +26,24 @@
 
 .spanDate {
   font-size: 18px;
+}
+
+.PromptHeader{
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.StoryHeader{
+  font-size: 18px;
+  margin-top: 50px;
+  font-weight: 700;
+}
+.LandingPageInput {
+  border: 1px solid grey;
+  width: 350px;
+}
+
+Input {
+  font-family: 'Courier New', Courier, monospace;
 }

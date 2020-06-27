@@ -1,21 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .WriteArticle input,
 .WriteArticle textarea,
 .WriteArticle button {
-  font-size: 16pt;
-  background: none;
+  font-size: 14pt;
+  background: none; 
   color: black;
   padding: 10px;
   width: 100%;
   display: block;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .WriteArticle textarea {
   height: 300px;
+  border: 1px solid grey;
 }
-
 
 .WriteArticle button {
   color: black;
   background: #61dafb;
+  width: 250px;
+  font-family: 'Noto Serif', serif;
 }
